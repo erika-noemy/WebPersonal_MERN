@@ -1,27 +1,32 @@
 
 import './App.scss';
-import {DatePicker} from 'antd'
-import {Card} from 'antd';
+import {BrowserRouter as Router, Route , Routes, Link} from 'react-router-dom';
 
 function App() {
-  const test= (date, dateString) =>{
-    console.log(date, dateString);
-  }
-
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <h1> web personal  <span> ERIKA</span></h1>
-        <h2>proyecto</h2>
-        <DatePicker onChange={test} />
-        <Card title="TARJETA" style={{ width: 300 }}>
-          <p>HOLA MUNDO</p>
-         
-         </Card>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+       <h1>Sistema de rutas basicas</h1>
+       <Routes>
+         <Route exact path = "/" element = {<Home/>} />
+         <Route exact path = "/contact" element = {<Contact/>} />
+         <Route exact path = "/user" element = {<User/>} />
+       </Routes>
+      
+      </div>
+    </Router>
+    
   );
 }
 
+function Home(){
+  return <h2> estamos en el componente home</h2>;
+}
+function Contact(){
+  return <h2> estamos en el componente contact</h2>;
+}
+function User(){
+  return <h2> estamos en el componente user</h2>;
+}
 export default App;
