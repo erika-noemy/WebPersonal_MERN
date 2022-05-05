@@ -14,9 +14,6 @@ function App() {
       <Home/>
       <Contact/>
     </div>
-     
-  
-   
   );
 }
 export default App;
