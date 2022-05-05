@@ -1,13 +1,16 @@
 import React from "react";
 import { Layout } from "antd";
-export default function LayoutAdmin(){
+export default function LayoutAdmin(props){
+    const {children} = props;
+    console.log(props);
+    const {Header,Content,Footer} = Layout
     return(
-        <div>
-            <Layout>
-                <h2>Menu Sider</h2>
-                <div> contenido ... </div>
-                <h5>Footer </h5>
-            </Layout>
-        </div>
+       <Layout>
+           <Layout>
+               <Header> HEADER</Header>
+               <Content> {children}</Content>
+               <Footer> tincode</Footer>
+           </Layout>
+       </Layout>
     )
 }
